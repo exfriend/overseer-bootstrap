@@ -1,0 +1,88 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "9048626277f16cf3b5f5b23832ba3873",
+    "content-hash": "6b336f98449e47fa7e9334d0f436de5a",
+    "packages": [
+        {
+            "name": "exfriend/artisan-mutex",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/exfriend/artisan-mutex.git",
+                "reference": "ec2a979a268108a7c99eb76e9ff650c89598030c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/exfriend/artisan-mutex/zipball/ec2a979a268108a7c99eb76e9ff650c89598030c",
+                "reference": "ec2a979a268108a7c99eb76e9ff650c89598030c",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Exfriend\\ArtisanMutex\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladislav Otchenashev",
+                    "email": "i@zlad.tk"
+                }
+            ],
+            "description": "Prevent ANY overlapping for Laravel Artisan commands.",
+            "time": "2016-08-25 22:06:45"
+        },
+        {
+            "name": "exfriend/laravel-overseer",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/exfriend/laravel-overseer.git",
+                "reference": "fa077a64b3070faf8823976d82bb24f86f05a968"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/exfriend/laravel-overseer/zipball/fa077a64b3070faf8823976d82bb24f86f05a968",
+                "reference": "fa077a64b3070faf8823976d82bb24f86f05a968",
+                "shasum": ""
+            },
+            "require": {
+                "exfriend/artisan-mutex": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Exfriend\\Overseer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vladislav Otchenashev",
+                    "email": "i@zlad.tk"
+                }
+            ],
+            "description": "Laravel Task Manager",
+            "time": "2016-08-25 22:07:40"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

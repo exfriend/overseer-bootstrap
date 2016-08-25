@@ -1,0 +1,20 @@
+{
+    "name": "exfriend/overseer-bootstrap",
+    "description": "Bootstrap UI for Laravel Overseer",
+    "type": "library",
+    "autoload":{
+       "psr-4":{
+          "Exfriend\\OverseerBootstrap\\" : "src/"
+       }
+    },
+    "require": {
+        "exfriend/laravel-overseer": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vladislav Otchenashev",
+            "email": "i@zlad.tk"
+        }
+    ]
+}
