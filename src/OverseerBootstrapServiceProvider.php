@@ -8,6 +8,7 @@ class OverseerBootstrapServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        require __DIR__ . '/helpers.php';
         if ( !$this->app->routesAreCached() )
         {
             require __DIR__ . '/routes.php';

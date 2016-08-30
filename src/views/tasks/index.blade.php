@@ -2,19 +2,7 @@
 
 @section('content')
     <div class="content">
-        <div class="clearfix"></div>
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">Tasks</h3>
-            </div>
-            <div class="box-body table-responsive">
-
-                <task-list></task-list>
-
-
-            </div>
-        </div>
-
+        <task-list></task-list>
     </div>
 @endsection
 
@@ -22,12 +10,10 @@
     @parent
 
     <template id="task-list-template">
-
         <div v-for="task in tasks" class="panel panel-default">
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-1">
-
                         <button @click="stop(task)" v-if="task.running" class="btn btn-default btn-lg">
                         <i class="fa fa-stop"></i>
                         </button>
@@ -43,8 +29,8 @@
                             <a href="{{ url( 'tasks/task') }}?command=@{{ task.command }}">@{{ task.title ? task.title : task.command }}</a>
                         </span>
                         <button @click="unlock(task)" v-if="task.running" class="btn btn-link btn-xs text-danger">
-                            <i class="fa fa-unlock-alt text-danger"></i>
-                            unlock
+                        <i class="fa fa-unlock-alt text-danger"></i>
+                        @lang('overseer::messages.action_unlock')
                         </button>
 
                         </span>

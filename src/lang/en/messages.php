@@ -7,7 +7,7 @@ return [
     'tasks' => 'Tasks',
     'view_all' => 'View all',
     'history_heading' => 'View history',
-    'history' => 'История',
+    'history' => 'History',
     'controls' => 'Controls',
     'action_run' => 'Run',
     'action_stop' => 'Stop',
@@ -18,17 +18,9 @@ return [
     'event' => 'event',
     'view_log' => 'view log',
     'no_runs' => 'This task has not ran yet',
-    'no_cronjobs' => 'No schedule defined',
-    'scheduler' => 'Scheduler',
-    'cronjobs' => 'Scheduled cronjobs',
+    'empty_log' => 'Task is not running',
     'active' => 'on',
-    'minute' => 'min',
-    'hour' => 'hour',
-    'day_of_month' => 'day of month',
-    'month' => 'month',
-    'day_of_week' => 'weekday',
     'last_run' => 'last run',
-    'next_run' => 'next run',
 
 
 ];

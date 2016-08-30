@@ -3,10 +3,9 @@
 @section('content')
     <div class="content">
         <div class="clearfix"></div>
-        <div class="box box-primary">
-            <div class="box-body table-responsive">
+        <div class="panel panel-default">
+            <div class="panel-body">
                 <task command="{{ get_class( $task->command() ) }}"></task>
-
             </div>
         </div>
 
@@ -23,17 +22,20 @@
         </h1>
 
 
-        <h3>Controls</h3>
+        <h3symotion-next
+        )>
+        @lang('overseer::messages.controls')
+        </h3symotion-next>
         <hr>
 
         <button @click="run()" v-if="!task.running" class="btn btn-default"><i class="fa fa-play"></i>
-        Run
+        @lang('overseer::messages.action_run')
         </button>
         <button @click="stop()" v-if="task.running" class="btn btn-default"><i class="fa fa-stop"></i>
-        Stop
+        @lang('overseer::messages.action_stop')
         </button>
         <button @click="unlock()" v-if="task.running" class="btn btn-danger"><i class="fa fa-unlock-alt"></i>
-        unlock
+        @lang('overseer::messages.action_unlock')
         </button>
 
 
@@ -44,7 +46,9 @@
                  role="progressbar"></div>
         </div>
 
-        <h3>Log</h3>
+        <h3>
+            @lang('overseer::messages.log')
+        </h3>
         <hr>
 
         <div class="panel panel-default">
@@ -55,33 +59,35 @@
 
                 <p v-for="line in task.short_log"> @{{ line }} </p>
 
+                <p v-if="!task.short_log.length"> @lang('overseer::messages.empty_log') </p>
+
             </div>
         </div>
 
         <br>
         <br>
 
-        <h3>{{ trans('overseer::messages.history') }}
-            <small>{{ trans('overseer::messages.past_runs') }}</small>
+        <h3>@lang('overseer::messages.history')
+            <small>@lang('overseer::messages.past_runs')</small>
         </h3>
         <hr>
 
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>{{ trans('overseer::messages.date') }}</th>
-                <th>{{ trans('overseer::messages.event') }}</th>
+                <th>@lang('overseer::messages.date') </th>
+                <th>@lang('overseer::messages.event')</th>
             </tr>
             </thead>
             <tbody>
             <tr v-for="log in task.logs">
                 <td>@{{ log }}</td>
                 <td>
-                    <a href="#"> {{ trans('overseer::messages.view_log') }} </a>
+                    <a href="/tasks/log?command=@{{ task.command }}&filename=@{{ log }}"> @lang('overseer::messages.view_log')  </a>
                 </td>
             </tr>
             <tr class="bg-warning" v-if="!task.logs.length">
-                <td colspan="8" style="text-align: center">{{ trans('overseer::messages.no_runs') }}</td>
+                <td colspan="8" style="text-align: center">@lang('overseer::messages.no_runs') </td>
             </tr>
 
             </tbody>
