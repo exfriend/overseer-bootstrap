@@ -64,3 +64,38 @@ Vue.component('task-list', {
     template: '#task-list-template'
 });
 
+Vue.component('tasks-nav-list', {
+    ready: function () {
+        this.fetchTasks();
+        setInterval(this.fetchTasks, 2000);
+    },
+    methods: {
+        fetchTasks: function () {
+            this.$http.get('/overseer/api/commands').then(function (response) {
+                this.tasks = response.json().data.filter(function (task) {
+                    return task.running;
+                });
+                console.log(this.tasks);
+            })
+        },
+        run: function (task) {
+            this.$http.get('/overseer/api/run?command=' + task.command).then(function (response) {
+            })
+        },
+        stop: function (task) {
+            this.$http.get('/overseer/api/stop?command=' + task.command).then(function (response) {
+            })
+        },
+        unlock: function (task) {
+            this.$http.get('/overseer/api/unlock?command=' + task.command).then(function (response) {
+            })
+        }
+    },
+    data: function () {
+        return {
+            tasks: []
+        };
+    },
+    template: '#tasks-nav-list'
+});
+
